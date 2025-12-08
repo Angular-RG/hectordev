@@ -1,0 +1,42 @@
+<section class="testimonials" id="testimonials">
+  <div class="section-header">
+    <span class="subtitle">What Industry Leaders Say:</span>
+    <h2 class="title">Professional Recommendations</h2>
+  </div>
+
+  <div class="controls">
+    <label class="switch-label">
+      Featured Only
+      <div class="switch" [class.checked]="featuredOnly()" (click)="toggleFeatured()">
+        <div class="slider"></div>
+      </div>
+    </label>
+  </div>
+
+  <div class="testimonials-grid">
+    @for (testimonial of displayTestimonials; track testimonial.id) {
+      <div class="testimonial-card">
+        <div class="card-header">
+          <div class="avatar">
+            <div class="avatar-placeholder">{{ testimonial.name.charAt(0) }}</div>
+          </div>
+          <div class="author-info">
+            <h3 class="author-name">{{ testimonial.name }}</h3>
+            <p class="author-role">{{ testimonial.role }}</p>
+            <p class="author-company">{{ testimonial.company }}</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="content">{{ testimonial.content }}</p>
+        </div>
+        <div class="card-footer">
+          <span class="date">{{ testimonial.date }}</span>
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="actions">
+    <button class="show-more-btn">Mostrar más testimoniales</button>
+  </div>
+</section>

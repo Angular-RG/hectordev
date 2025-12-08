@@ -1,0 +1,21 @@
+<section class="lifecycle" id="approach">
+  <div class="section-header">
+    <span class="subtitle">My Approach:</span>
+    <h2 class="title">Development Lifecycle</h2>
+  </div>
+
+  <div class="steps-container">
+    @for (step of steps; track step.id; let last = $last) {
+      <div class="step-card">
+        <div class="icon-wrapper">
+          <span class="icon">{{ step.icon }}</span>
+        </div>
+        <h3 class="step-title">{{ step.title }}</h3>
+        <p class="step-description">{{ step.description }}</p>
+        @if (!last) {
+          <div class="arrow">»</div>
+        }
+      </div>
+    }
+  </div>
+</section>

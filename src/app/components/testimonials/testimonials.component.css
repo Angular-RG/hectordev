@@ -1,0 +1,156 @@
+.testimonials {
+  padding: 4rem 2rem;
+  background-color: #0f172a;
+  color: #fff;
+  text-align: center;
+}
+
+.section-header {
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.controls {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.switch-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #cbd5e1;
+}
+
+.switch {
+  width: 50px;
+  height: 26px;
+  background-color: #334155;
+  border-radius: 13px;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.switch.checked {
+  background-color: #7c3aed;
+}
+
+.slider {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s;
+}
+
+.switch.checked .slider {
+  transform: translateX(24px);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+.testimonial-card {
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.avatar-placeholder {
+  width: 60px;
+  height: 60px;
+  background: #475569;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.author-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #f8fafc;
+}
+
+.author-role {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin: 0.2rem 0 0;
+}
+
+.author-company {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.card-body {
+  flex: 1;
+  margin-bottom: 1.5rem;
+}
+
+.content {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.card-footer {
+  font-size: 0.85rem;
+  color: #64748b;
+  text-align: right;
+}
+
+.show-more-btn {
+  background: #7c3aed;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.show-more-btn:hover {
+  background: #6d28d9;
+}

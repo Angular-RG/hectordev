@@ -1,0 +1,19 @@
+<header class="header">
+  <div class="logo">
+    <!-- Placeholder for logo, using text for now if image is missing -->
+    <span class="logo-text">🚀 DevPortfolio</span>
+  </div>
+  <nav class="nav">
+    <ul class="nav-list">
+      @for (item of menuItems; track item.label) {
+        <li class="nav-item">
+          <a [href]="item.link" class="nav-link">{{ item.label }}</a>
+        </li>
+      }
+    </ul>
+  </nav>
+  <div class="language-selector">
+    <button class="lang-btn" aria-label="English">🇺🇸</button>
+    <button class="lang-btn" aria-label="Spanish">🇲🇽</button>
+  </div>
+</header>
