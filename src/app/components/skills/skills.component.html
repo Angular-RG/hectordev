@@ -1,7 +1,9 @@
 <section class="skills" id="skills">
+  <div class="skills-background"></div>
+
   <div class="section-header">
-    <span class="subtitle">Core Competencies:</span>
-    <h2 class="title">Technologies & Key Skills</h2>
+    <span class="subtitle">Core Competencies</span>
+    <h2 class="title">Technologies & <span class="highlight">Key Skills</span></h2>
   </div>
 
   <div class="filter-container">
@@ -11,25 +13,42 @@
         [class.active]="selectedCategory() === category"
         (click)="setCategory(category)">
         {{ category }}
+        <span class="btn-glitch"></span>
       </button>
     }
   </div>
 
   <div class="skills-grid">
     @for (skill of filteredSkills(); track skill.name) {
-      <div class="skill-card">
-        <div class="skill-header">
-          <div class="skill-icon">{{ skill.icon }}</div>
-          <h3 class="skill-name">{{ skill.name }}</h3>
+      <div class="skill-card glassmorphism" appTilt>
+        <div class="card-border-gradient"></div>
+        <div class="card-content">
+          <div class="card-glow"></div>
+          <div class="tech-decoration top-right"></div>
+          <div class="tech-decoration bottom-left"></div>
+
+          <div class="skill-header">
+            <div class="skill-icon-wrapper">
+              <i [class]="skill.icon" class="skill-icon"></i>
+            </div>
+            <div class="skill-info">
+              <h3 class="skill-name">{{ skill.name }}</h3>
+              <span class="skill-level">{{ skill.level }}</span>
+            </div>
+            <div class="percentage-badge">{{ skill.percentage }}%</div>
+          </div>
+
+          <div class="progress-container">
+            <div class="progress-bar" [style.width.%]="skill.percentage">
+              <div class="progress-glow"></div>
+            </div>
+          </div>
+
+          <div class="skill-footer">
+            <span class="skill-years">{{ skill.years }} years exp.</span>
+            <span class="skill-category">{{ skill.category }}</span>
+          </div>
         </div>
-        <div class="progress-container">
-          <div class="progress-bar" [style.width.%]="skill.percentage"></div>
-        </div>
-        <div class="skill-footer">
-          <span class="skill-level">{{ skill.level }}</span>
-          <span class="skill-years">{{ skill.years }} years</span>
-        </div>
-        <div class="percentage-label">{{ skill.percentage }}%</div>
       </div>
     }
   </div>
