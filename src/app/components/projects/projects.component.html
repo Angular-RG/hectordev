@@ -1,0 +1,98 @@
+<section class="projects-section" id="projects">
+  <div class="container">
+    <div class="header-content">
+      <h3 class="subtitle">Highlighted Projects</h3>
+      <h2 class="title">Project <span class="highlight">Portfolio</span></h2>
+    </div>
+
+    <div class="controls">
+      <div class="search-box">
+        <input
+          type="text"
+          placeholder="Search projects..."
+          [ngModel]="searchQuery()"
+          (ngModelChange)="searchQuery.set($event)"
+          class="search-input"
+        >
+      </div>
+
+      <div class="filters">
+        <button
+          class="filter-btn"
+          [class.active]="activeFilter() === 'Todos'"
+          (click)="setFilter('Todos')"
+        >Todos</button>
+        <button
+          class="filter-btn"
+          [class.active]="activeFilter() === 'Gobierno Digital'"
+          (click)="setFilter('Gobierno Digital')"
+        >Gobierno Digital</button>
+        <button
+          class="filter-btn"
+          [class.active]="activeFilter() === 'Freelancer'"
+          (click)="setFilter('Freelancer')"
+        >Freelancer</button>
+        <button
+          class="filter-btn"
+          [class.active]="activeFilter() === 'APIs'"
+          (click)="setFilter('APIs')"
+        >APIs</button>
+      </div>
+    </div>
+
+    <p class="count-text">Displaying {{ filteredProjects().length }} of {{ projects.length }} projects</p>
+
+    <div class="projects-grid">
+      @for (project of filteredProjects(); track project.projectName) {
+        <article class="project-card">
+          <div class="card-image">
+            <!-- Placeholder for image if not available, or use a gradient -->
+            <div class="image-placeholder">
+              <span class="project-initials">{{ project.projectName.substring(0, 2) }}</span>
+            </div>
+          </div>
+
+          <div class="card-content">
+            <div class="title-row">
+              <h3 class="project-title">{{ project.projectName }}</h3>
+              @if (project.migration) {
+                <span class="migration-badge" [class]="project.migration.status.toLowerCase()">
+                  {{ project.migration.status }}
+                </span>
+              }
+            </div>
+
+            @if (project.migration) {
+              <div class="migration-info">
+                <span class="legacy">{{ project.migration.legacyVersion }}</span>
+                <span class="arrow">➜</span>
+                <span class="modern">{{ project.migration.currentVersion }}</span>
+              </div>
+            }
+
+            <p class="project-desc">{{ project.projectDescription }}</p>
+
+            <div class="tech-stack">
+              @for (tech of project.tecnologias; track tech.nombre) {
+                <span class="tech-tag" [title]="tech.nombre">
+                  {{ tech.nombre }}
+                </span>
+              }
+            </div>
+
+            <div class="card-footer">
+              <span class="category-tag">{{ project.category }}</span>
+              <span class="tech-count">{{ project.tecnologias.length }} tecnologías</span>
+
+              @if (project.isProjectLinkPresent) {
+                <a [href]="project.projectLiveLink" target="_blank" class="link-btn" aria-label="View Project">
+                  ↗
+                </a>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

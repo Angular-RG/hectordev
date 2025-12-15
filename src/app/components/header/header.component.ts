@@ -13,6 +13,7 @@ export class HeaderComponent {
   menuItems = [
     { label: 'Home', link: '#home' },
     { label: 'About', link: '#about' },
+    { label: 'Projects', link: '#projects' },
     { label: 'Approach', link: '#approach' },
     { label: 'Skills', link: '#skills' },
     { label: 'Testimonials', link: '#testimonials' },

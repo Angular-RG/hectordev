@@ -7,6 +7,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { AboutComponent } from './components/about/about.component';
     HeaderComponent,
     HeroComponent,
     AboutComponent,
+    ProjectsComponent,
     LifecycleComponent,
     SkillsComponent,
     TestimonialsComponent,
