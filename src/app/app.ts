@@ -6,6 +6,7 @@ import { LifecycleComponent } from './components/lifecycle/lifecycle.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AboutComponent } from './components/about/about.component';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
     RouterOutlet,
     HeaderComponent,
     HeroComponent,
+    AboutComponent,
     LifecycleComponent,
     SkillsComponent,
     TestimonialsComponent,

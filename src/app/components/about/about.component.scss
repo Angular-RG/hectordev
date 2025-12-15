@@ -1,0 +1,113 @@
+$neon-purple: #bc13fe;
+$neon-cyan: #0ff0fc;
+$bg-dark: #0a0a12;
+$text-gray: #94a3b8;
+
+.about-section {
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.content-wrapper {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subtitle {
+  color: $neon-cyan;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2rem;
+  font-family: 'Fira Code', monospace;
+
+  .highlight {
+    color: $neon-purple;
+    text-shadow: 0 0 20px rgba($neon-purple, 0.4);
+  }
+}
+
+.text-content {
+  color: $text-gray;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.text-highlight {
+  color: #fff;
+  font-weight: 600;
+}
+
+.tech-highlight {
+  color: $neon-cyan;
+  font-family: 'Fira Code', monospace;
+  font-weight: 500;
+}
+
+.download-btn {
+  background: linear-gradient(45deg, $neon-purple, darken($neon-purple, 10%));
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba($neon-purple, 0.3);
+  font-family: 'Fira Code', monospace;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba($neon-purple, 0.5);
+
+    .icon {
+      transform: translateY(3px);
+    }
+  }
+
+  .icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .about-section {
+    padding: 4rem 1.5rem;
+  }
+}
