@@ -7,9 +7,10 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css',
+  styleUrl: './footer.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FooterComponent {
-  email = 'hector8577@gmail.com';
+  email = 'hectorr9577@gmail.com';
+  currentdate = new Date().getFullYear();
 }

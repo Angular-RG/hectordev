@@ -1,29 +1,38 @@
-<footer class="footer" id="contact">
+<footer class="footer">
   <div class="footer-content">
-    <h2 class="title">Let's Connect: <span class="highlight">Contact Me</span></h2>
+    <div class="footer-header">
+      <h2 class="title">
+        <span class="bracket">[</span>
+        Let's Connect
+        <span class="bracket">]</span>
+      </h2>
+      <p class="subtitle">Ready to start a new project?</p>
+    </div>
 
-    <div class="contact-form">
-      <div class="input-group">
-        <input type="email" [value]="email" readonly class="email-input" />
-        <button class="send-btn" aria-label="Send email">
-          ➤
-        </button>
+    <div class="contact-container">
+      <div class="email-box">
+        <span class="prompt">user@portfolio:~$</span>
+        <input type="text" [value]="email" readonly class="email-input" />
+        <a [href]="'mailto:' + email" class="action-btn" aria-label="Send Email">
+          <span class="icon">✉️</span>
+        </a>
       </div>
     </div>
 
     <div class="social-links">
-      <a href="#" class="social-link" aria-label="GitHub">
-        🐙
+      <a href="https://github.com/HectorARG" target="_blank" class="social-link" aria-label="GitHub">
+        <i class="devicon-github-plain"></i>
       </a>
-      <a href="#" class="social-link" aria-label="Website">
-        🌐
+      <a href="https://www.linkedin.com/in/hector-adrian-roman79509/" target="_blank" class="social-link" aria-label="LinkedIn">
+        <i class="devicon-linkedin-plain"></i>
       </a>
-      <a href="#" class="social-link" aria-label="LinkedIn">
-        💼
+      <a href="#" target="_blank" class="social-link" aria-label="Twitter">
+        <i class="devicon-twitter-original"></i>
       </a>
-      <a href="#" class="social-link" aria-label="Twitter">
-        🐦
-      </a>
+    </div>
+
+    <div class="copyright">
+      <p>&copy; {{currentdate}} HectorDev. <span class="highlight">Built with Angular 21</span></p>
     </div>
   </div>
 </footer>
