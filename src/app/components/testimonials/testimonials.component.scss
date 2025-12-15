@@ -1,0 +1,247 @@
+$neon-purple: #bc13fe;
+$neon-cyan: #0ff0fc;
+$bg-dark: #0a0a12;
+$glass-bg: rgba(255, 255, 255, 0.03);
+$glass-border: rgba(255, 255, 255, 0.08);
+
+@mixin glassmorphism {
+  background: $glass-bg;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid $glass-border;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.testimonials {
+  position: relative;
+  padding: 6rem 2rem;
+  background-color: $bg-dark;
+  color: #fff;
+  overflow: hidden;
+}
+
+.testimonials-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 90% 10%, rgba($neon-purple, 0.05) 0%, transparent 60%),
+    radial-gradient(circle at 10% 90%, rgba($neon-cyan, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.subtitle {
+  color: $neon-cyan;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0;
+
+  .highlight {
+    color: $neon-purple;
+    text-shadow: 0 0 20px rgba($neon-purple, 0.4);
+  }
+}
+
+.controls {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.switch-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.switch {
+  width: 50px;
+  height: 26px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 13px;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid $glass-border;
+}
+
+.switch.checked {
+  background-color: rgba($neon-purple, 0.3);
+  border-color: $neon-purple;
+  box-shadow: 0 0 10px rgba($neon-purple, 0.3);
+}
+
+.slider {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.switch.checked .slider {
+  transform: translateX(24px);
+  background-color: $neon-cyan;
+  box-shadow: 0 0 10px $neon-cyan;
+}
+
+.testimonials-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  @include glassmorphism;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: rgba($neon-cyan, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+    .quote-icon {
+      color: rgba($neon-cyan, 0.2);
+      transform: scale(1.1);
+    }
+
+    .avatar-placeholder {
+      border-color: $neon-cyan;
+      color: $neon-cyan;
+      box-shadow: 0 0 15px rgba($neon-cyan, 0.2);
+    }
+  }
+}
+
+.quote-icon {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 6rem;
+  line-height: 1;
+  font-family: serif;
+  color: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.avatar-placeholder {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid $glass-border;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.author-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+
+.author-role {
+  font-size: 0.9rem;
+  color: $neon-cyan;
+  margin: 0.2rem 0 0;
+}
+
+.author-company {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin: 0;
+  font-style: italic;
+}
+
+.card-body {
+  flex: 1;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  font-size: 1rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.card-footer {
+  border-top: 1px solid $glass-border;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.stars {
+  color: #fbbf24;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
+}
+
+@media (max-width: 768px) {
+  .testimonials {
+    padding: 4rem 1rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}

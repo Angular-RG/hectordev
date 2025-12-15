@@ -1,7 +1,9 @@
 <section class="testimonials" id="testimonials">
+  <div class="testimonials-background"></div>
+
   <div class="section-header">
-    <span class="subtitle">What Industry Leaders Say:</span>
-    <h2 class="title">Professional Recommendations</h2>
+    <span class="subtitle">What Industry Leaders Say</span>
+    <h2 class="title">Professional <span class="highlight">Recommendations</span></h2>
   </div>
 
   <div class="controls">
@@ -15,7 +17,8 @@
 
   <div class="testimonials-grid">
     @for (testimonial of displayTestimonials; track testimonial.id) {
-      <div class="testimonial-card">
+      <div class="testimonial-card glassmorphism">
+        <div class="quote-icon">"</div>
         <div class="card-header">
           <div class="avatar">
             <div class="avatar-placeholder">{{ testimonial.name.charAt(0) }}</div>
@@ -30,13 +33,9 @@
           <p class="content">{{ testimonial.content }}</p>
         </div>
         <div class="card-footer">
-          <span class="date">{{ testimonial.date }}</span>
+          <div class="stars">★★★★★</div>
         </div>
       </div>
     }
-  </div>
-
-  <div class="actions">
-    <button class="show-more-btn">Mostrar más testimoniales</button>
   </div>
 </section>
