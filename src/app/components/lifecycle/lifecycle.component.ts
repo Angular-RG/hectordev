@@ -7,7 +7,7 @@ import { LifecycleStep } from '../../models/lifecycle-step.interface';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './lifecycle.component.html',
-  styleUrl: './lifecycle.component.css',
+  styleUrl: './lifecycle.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LifecycleComponent {
