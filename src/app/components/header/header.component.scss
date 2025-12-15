@@ -1,0 +1,163 @@
+$neon-purple: #bc13fe;
+$neon-cyan: #0ff0fc;
+$bg-dark: #0a0a12;
+$glass-bg: rgba(10, 10, 18, 0.8);
+$glass-border: rgba(255, 255, 255, 0.08);
+
+@mixin glassmorphism {
+  background: $glass-bg;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid $glass-border;
+}
+
+.header {
+  @include glassmorphism;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-family: 'Fira Code', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+
+    .logo-text {
+      text-shadow: 0 0 10px rgba($neon-purple, 0.5);
+    }
+  }
+}
+
+.logo-bracket {
+  color: $neon-cyan;
+}
+
+.logo-text {
+  background: linear-gradient(to right, #fff, #e2e8f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #fff;
+
+    .link-underline {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+}
+
+.link-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, $neon-purple, $neon-cyan);
+  transition: all 0.3s ease;
+  opacity: 0;
+  box-shadow: 0 0 8px $neon-purple;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.social-link {
+  color: #94a3b8;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid transparent;
+
+  &:hover {
+    color: $neon-cyan;
+    background: rgba($neon-cyan, 0.1);
+    border-color: rgba($neon-cyan, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba($neon-cyan, 0.2);
+  }
+
+  i {
+    line-height: 1;
+    display: block;
+  }
+}
+
+.cta-btn {
+  background: transparent;
+  border: 1px solid $neon-purple;
+  color: $neon-purple;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba($neon-purple, 0.1);
+
+  &:hover {
+    background: rgba($neon-purple, 0.1);
+    box-shadow: 0 0 20px rgba($neon-purple, 0.3);
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
+
+  .nav {
+    display: none; // Mobile menu logic would go here
+  }
+
+  .actions {
+    display: none;
+  }
+}

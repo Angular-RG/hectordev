@@ -6,15 +6,15 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css',
+  styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
   menuItems = [
     { label: 'Home', link: '#home' },
-    { label: 'About', link: '#about' },
-    { label: 'Projects', link: '#projects' },
-    { label: 'Blog', link: '#blog' },
+    { label: 'Approach', link: '#approach' },
+    { label: 'Skills', link: '#skills' },
+    { label: 'Testimonials', link: '#testimonials' },
     { label: 'Contact', link: '#contact' }
   ];
 }
