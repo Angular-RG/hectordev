@@ -16,14 +16,18 @@ export class SkillsComponent {
   categories: SkillCategory[] = ['All', 'Frontend', 'Backend', 'Database', 'Cloud', 'Tools'];
 
   skills: Skill[] = [
-    { name: 'Angular', percentage: 90, level: 'Advanced', years: 4, category: 'Frontend', icon: '🅰️' },
-    { name: 'Spring Boot', percentage: 88, level: 'Advanced', years: 4, category: 'Backend', icon: '🍃' },
-    { name: 'Oracle', percentage: 86, level: 'Expert', years: 5, category: 'Database', icon: '🔴' },
-    { name: 'Docker', percentage: 85, level: 'Expert', years: 5, category: 'Tools', icon: '🐳' },
-    { name: 'Python', percentage: 87, level: 'Expert', years: 5, category: 'Backend', icon: '🐍' },
-    { name: 'Graen', percentage: 80, level: 'Expert', years: 5, category: 'Tools', icon: '📦' },
-    { name: 'Patamaom', percentage: 89, level: 'Expert', years: 5, category: 'Cloud', icon: '☁️' },
-    { name: 'WebVIL', percentage: 85, level: 'Expert', years: 5, category: 'Frontend', icon: '🌐' }
+    { name: 'TypeScript', percentage: 90, level: 'Advanced', years: 5, category: 'Frontend', icon: '🅰️' },
+    { name: 'Angular', percentage: 90, level: 'Advanced', years: 5, category: 'Frontend', icon: '🅰️' },
+    { name: 'ExpressJs', percentage: 80, level: 'Expert', years: 3, category: 'Backend', icon: '🍃' },
+    { name: 'Java', percentage: 80, level: 'Expert', years: 4, category: 'Backend', icon: '🍃' },
+    { name: 'Spring Boot', percentage: 88, level: 'Expert', years: 4, category: 'Backend', icon: '🍃' },
+    { name: 'Spring Security', percentage: 50, level: 'Intermediate', years: 1, category: 'Backend', icon: '🍃' },
+    { name: 'Oracle', percentage: 75, level: 'Expert', years: 4, category: 'Database', icon: '🔴' },
+    { name: 'PostgreSQL', percentage: 86, level: 'Expert', years: 3, category: 'Database', icon: '🔴' },
+    { name: 'Redis', percentage: 30, level: 'Beginner', years: 1, category: 'Database', icon: '🔴' },
+    { name: 'Docker', percentage: 35, level: 'Intermediate', years: 2, category: 'Tools', icon: '🐳' },
+    { name: 'AWS', percentage: 35, level: 'Intermediate', years: 2, category: 'Cloud', icon: '🐳' },
+    { name: 'Git', percentage: 95, level: 'Advanced', years: 5, category: 'Tools', icon: '🐍' }
   ];
 
   filteredSkills = computed(() => {
