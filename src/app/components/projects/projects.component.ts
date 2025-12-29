@@ -50,7 +50,7 @@ export class ProjectsComponent {
       arquitectura: Arquitectura.MICRO,
       category: 'Gobierno Digital',
       migration: {
-        status: 'Migrating',
+        status: 'Migrando',
         legacyVersion: 'Java 8 / Spring Boot 2.x / Angular 8 / Oracle 11g / Docker',
         currentVersion: 'Java 21 / Spring Boot 3.5.x / Angular 21 / PostgreSQL 16 / Kubernetes'
       },
@@ -77,7 +77,7 @@ export class ProjectsComponent {
       arquitectura: Arquitectura.MONO,
       category: 'Gobierno Digital',
       migration: {
-        status: 'Legacy',
+        status: 'Legado',
         currentVersion: 'Java 11 / Spring Boot 2.x / Angular 12 / Oracle 11g'
       },
       tecnologias: [
@@ -102,7 +102,7 @@ export class ProjectsComponent {
       arquitectura: Arquitectura.MONO,
       category: 'Gobierno Digital',
        migration: {
-        status: 'Legacy',
+        status: 'Legado',
         currentVersion: 'Java 11 / Spring Boot 2.x / Angular 12 / Oracle 11g'
       },
       tecnologias: [
@@ -127,7 +127,7 @@ export class ProjectsComponent {
       arquitectura: Arquitectura.MONO,
       category: 'APIs',
       migration: {
-        status: 'Migrating',
+        status: 'Migrando',
         legacyVersion: 'Java 11 / Spring Boot 2.x / Oracle 11g / Docker',
         currentVersion: 'Java 21 / Spring Boot 3.5.x / Spring Security / OAuth2.0 / PostgreSQL 16 / Kubernetes'
       },

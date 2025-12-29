@@ -11,12 +11,12 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent {
   menuItems = [
-    { label: 'Home', link: '#home' },
-    { label: 'About', link: '#about' },
-    { label: 'Projects', link: '#projects' },
-    { label: 'Approach', link: '#approach' },
-    { label: 'Skills', link: '#skills' },
-    { label: 'Testimonials', link: '#testimonials' },
-    { label: 'Contact', link: '#contact' }
+    { label: 'Inicio', link: '#home' },
+    { label: 'Sobre Mí', link: '#about' },
+    { label: 'Proyectos', link: '#projects' },
+    { label: 'Enfoque', link: '#approach' },
+    { label: 'Habilidades', link: '#skills' },
+    { label: 'Testimonios', link: '#testimonials' },
+    { label: 'Contacto', link: '#contact' }
   ];
 }

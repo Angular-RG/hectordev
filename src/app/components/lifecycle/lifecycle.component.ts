@@ -14,26 +14,26 @@ export class LifecycleComponent {
   steps: LifecycleStep[] = [
     {
       id: 1,
-      title: 'Discovery & Strategy',
-      description: 'In-depth requirements analysis, roadmap planning, and defining clear objectives and actionable tasks.',
+      title: 'Descubrimiento y Estrategia',
+      description: 'Análisis profundo de requerimientos, planificación de hoja de ruta y definición de objetivos claros y tareas accionables.',
       icon: '🔍'
     },
     {
       id: 2,
-      title: 'Ideation & Solution Design',
-      description: 'Collaborative brainstorming, best practices in UI/UX, and comprehensive system architecture.',
+      title: 'Ideación y Diseño de Solución',
+      description: 'Lluvia de ideas colaborativa, mejores prácticas en UI/UX y arquitectura de sistemas integral.',
       icon: '💡'
     },
     {
       id: 3,
-      title: 'Implementation',
-      description: 'Executing development with a focus on code quality, maintainability, and agile methodology.',
+      title: 'Implementación',
+      description: 'Ejecución del desarrollo con enfoque en calidad de código, mantenibilidad y metodología ágil.',
       icon: '💻'
     },
     {
       id: 4,
-      title: 'Quality Assurance',
-      description: 'Rigorous unit, integration, and end-to-end testing for reliable software solutions.',
+      title: 'Aseguramiento de Calidad',
+      description: 'Pruebas rigurosas unitarias, de integración y de extremo a extremo para soluciones de software confiables.',
       icon: '🛡️'
     }
   ];

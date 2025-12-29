@@ -16,7 +16,7 @@ export class TiltDirective {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateX = ((y - centerY) / centerY) * -10; // Max rotation 10deg
+    const rotateX = ((y - centerY) / centerY) * -10;
     const rotateY = ((x - centerX) / centerX) * 10;
 
     this.renderer.setStyle(this.el.nativeElement, 'transform',

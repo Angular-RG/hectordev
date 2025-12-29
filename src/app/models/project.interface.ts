@@ -22,7 +22,7 @@ export interface Project {
   tecnologias: Technology[];
   category?: string; // Added for filtering
   migration?: {
-    status: 'Legacy' | 'Migrating' | 'Modernized';
+    status: 'Legado' | 'Migrando' | 'Modernizado';
     legacyVersion?: string;
     currentVersion?: string;
   };
