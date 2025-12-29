@@ -14,6 +14,27 @@ import { Project, Arquitectura } from '../../models/project.interface';
 export class ProjectsComponent {
   searchQuery = signal('');
   activeFilter = signal('Todos');
+  selectedProject = signal<Project | null>(null);
+
+  selectedProjectMigrationList = computed(() => {
+    const project = this.selectedProject();
+    if (!project || !project.migration || !project.migration.legacyVersion || !project.migration.currentVersion) {
+      return [];
+    }
+
+    const legacyItems = project.migration.legacyVersion.split('/').map(s => s.trim());
+    const currentItems = project.migration.currentVersion.split('/').map(s => s.trim());
+    const maxLength = Math.max(legacyItems.length, currentItems.length);
+
+    const list = [];
+    for (let i = 0; i < maxLength; i++) {
+      list.push({
+        legacy: legacyItems[i] || '',
+        current: currentItems[i] || ''
+      });
+    }
+    return list;
+  });
 
   projects: Project[] = [
     {
@@ -55,6 +76,10 @@ export class ProjectsComponent {
       freelance: false,
       arquitectura: Arquitectura.MONO,
       category: 'Gobierno Digital',
+      migration: {
+        status: 'Legacy',
+        currentVersion: 'Java 11 / Spring Boot 2.x / Angular 12 / Oracle 11g'
+      },
       tecnologias: [
         { nombre: 'Java', logo: 'devicon-java-plain' },
         { nombre: 'TypeScript', logo: 'devicon-typescript-plain' },
@@ -76,6 +101,10 @@ export class ProjectsComponent {
       freelance: false,
       arquitectura: Arquitectura.MONO,
       category: 'Gobierno Digital',
+       migration: {
+        status: 'Legacy',
+        currentVersion: 'Java 11 / Spring Boot 2.x / Angular 12 / Oracle 11g'
+      },
       tecnologias: [
         { nombre: 'Java', logo: 'devicon-java-plain' },
         { nombre: 'TypeScript', logo: 'devicon-typescript-plain' },
@@ -87,7 +116,7 @@ export class ProjectsComponent {
     },
     {
       projectImg: 'assets/images/api.png',
-      projectName: 'API Durango-Digital',
+      projectName: 'API DD',
       projectDescription: 'API REST robusta para servicios gubernamentales digitales. Gestión de trámites vehiculares, registro civil, impuesto predial y declaraciones fiscales. Integración con múltiples sistemas.',
       isProjectLinkPresent: true,
       projectLiveLink: 'https://www.pagos.durango.gob.mx/',
@@ -97,6 +126,11 @@ export class ProjectsComponent {
       freelance: false,
       arquitectura: Arquitectura.MONO,
       category: 'APIs',
+      migration: {
+        status: 'Migrating',
+        legacyVersion: 'Java 11 / Spring Boot 2.x / Oracle 11g / Docker',
+        currentVersion: 'Java 21 / Spring Boot 3.5.x / Spring Security / OAuth2.0 / PostgreSQL 16 / Kubernetes'
+      },
       tecnologias: [
         { nombre: 'Java', logo: 'devicon-java-plain' },
         { nombre: 'Spring Boot', logo: 'devicon-spring-plain' },
@@ -184,5 +218,15 @@ export class ProjectsComponent {
 
   setFilter(filter: string) {
     this.activeFilter.set(filter);
+  }
+
+  openModal(project: Project) {
+    this.selectedProject.set(project);
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeModal() {
+    this.selectedProject.set(null);
+    document.body.style.overflow = '';
   }
 }
