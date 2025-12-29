@@ -1,15 +1,15 @@
 <section class="projects-section" id="projects">
   <div class="container">
     <div class="header-content">
-      <h3 class="subtitle">Highlighted Projects</h3>
-      <h2 class="title">Project <span class="highlight">Portfolio</span></h2>
+      <h3 class="subtitle">Proyectos Destacados</h3>
+      <h2 class="title">Portafolio de <span class="highlight">Proyectos</span></h2>
     </div>
 
     <div class="controls">
       <div class="search-box">
         <input
           type="text"
-          placeholder="Search projects..."
+          placeholder="Buscar proyectos..."
           [ngModel]="searchQuery()"
           (ngModelChange)="searchQuery.set($event)"
           class="search-input"
@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <p class="count-text">Displaying {{ filteredProjects().length }} of {{ projects.length }} projects</p>
+    <p class="count-text">Mostrando {{ filteredProjects().length }} de {{ projects.length }} proyectos</p>
 
     <div class="projects-grid">
       @for (project of filteredProjects(); track project.projectName) {
@@ -94,7 +94,7 @@
               <div class="actions">
                 <button class="details-btn" (click)="openModal(project)">Ver detalles</button>
                 @if (project.isProjectLinkPresent) {
-                  <a [href]="project.projectLiveLink" target="_blank" class="link-btn" aria-label="View Project">
+                  <a [href]="project.projectLiveLink" target="_blank" class="link-btn" aria-label="Ver Proyecto">
                     ↗
                   </a>
                 }
@@ -126,9 +126,9 @@
                @if (migration.legacyVersion && migration.currentVersion) {
                  <div class="comparison-table">
                    <div class="table-header">
-                     <span class="col-legacy">Legacy Stack</span>
+                     <span class="col-legacy">Stack Anterior</span>
                      <span class="col-arrow"></span>
-                     <span class="col-modern">Modern Stack</span>
+                     <span class="col-modern">Stack Actual</span>
                    </div>
                    @for (item of selectedProjectMigrationList(); track $index) {
                      <div class="comparison-row">

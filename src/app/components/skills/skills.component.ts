@@ -12,28 +12,28 @@ import { TiltDirective } from '../../directives/tilt.directive';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SkillsComponent {
-  selectedCategory = signal<SkillCategory>('All');
+  selectedCategory = signal<SkillCategory>('Todos');
 
-  categories: SkillCategory[] = ['All', 'Frontend', 'Backend', 'Database', 'Cloud', 'Tools'];
+  categories: SkillCategory[] = ['Todos', 'Frontend', 'Backend', 'Base de Datos', 'Nube', 'Herramientas'];
 
   skills: Skill[] = [
-    { name: 'TypeScript', percentage: 90, level: 'Advanced', years: 5, category: 'Frontend', icon: 'devicon-typescript-plain' },
-    { name: 'Angular', percentage: 90, level: 'Advanced', years: 5, category: 'Frontend', icon: 'devicon-angularjs-plain' },
-    { name: 'ExpressJs', percentage: 80, level: 'Expert', years: 3, category: 'Backend', icon: 'devicon-express-original' },
-    { name: 'Java', percentage: 80, level: 'Expert', years: 4, category: 'Backend', icon: 'devicon-java-plain' },
-    { name: 'Spring Boot', percentage: 88, level: 'Expert', years: 4, category: 'Backend', icon: 'devicon-spring-plain' },
-    { name: 'Spring Security', percentage: 50, level: 'Intermediate', years: 1, category: 'Backend', icon: 'devicon-spring-original' },
-    { name: 'Oracle', percentage: 75, level: 'Expert', years: 4, category: 'Database', icon: 'devicon-oracle-original' },
-    { name: 'PostgreSQL', percentage: 86, level: 'Expert', years: 3, category: 'Database', icon: 'devicon-postgresql-plain' },
-    { name: 'Redis', percentage: 30, level: 'Beginner', years: 1, category: 'Database', icon: 'devicon-redis-plain' },
-    { name: 'Docker', percentage: 35, level: 'Intermediate', years: 2, category: 'Tools', icon: 'devicon-docker-plain' },
-    { name: 'AWS', percentage: 35, level: 'Intermediate', years: 2, category: 'Cloud', icon: 'devicon-amazonwebservices-plain-wordmark' },
-    { name: 'Git', percentage: 95, level: 'Advanced', years: 5, category: 'Tools', icon: 'devicon-git-plain' }
+    { name: 'TypeScript', percentage: 90, level: 'Avanzado', years: 5, category: 'Frontend', icon: 'devicon-typescript-plain' },
+    { name: 'Angular', percentage: 90, level: 'Avanzado', years: 5, category: 'Frontend', icon: 'devicon-angularjs-plain' },
+    { name: 'ExpressJs', percentage: 80, level: 'Experto', years: 3, category: 'Backend', icon: 'devicon-express-original' },
+    { name: 'Java', percentage: 80, level: 'Experto', years: 4, category: 'Backend', icon: 'devicon-java-plain' },
+    { name: 'Spring Boot', percentage: 88, level: 'Experto', years: 4, category: 'Backend', icon: 'devicon-spring-plain' },
+    { name: 'Spring Security', percentage: 50, level: 'Intermedio', years: 1, category: 'Backend', icon: 'devicon-spring-original' },
+    { name: 'Oracle', percentage: 75, level: 'Experto', years: 4, category: 'Base de Datos', icon: 'devicon-oracle-original' },
+    { name: 'PostgreSQL', percentage: 86, level: 'Experto', years: 3, category: 'Base de Datos', icon: 'devicon-postgresql-plain' },
+    { name: 'Redis', percentage: 30, level: 'Principiante', years: 1, category: 'Base de Datos', icon: 'devicon-redis-plain' },
+    { name: 'Docker', percentage: 35, level: 'Intermedio', years: 2, category: 'Herramientas', icon: 'devicon-docker-plain' },
+    { name: 'AWS', percentage: 35, level: 'Intermedio', years: 2, category: 'Nube', icon: 'devicon-amazonwebservices-plain-wordmark' },
+    { name: 'Git', percentage: 95, level: 'Avanzado', years: 5, category: 'Herramientas', icon: 'devicon-git-plain' }
   ];
 
   filteredSkills = computed(() => {
     const category = this.selectedCategory();
-    if (category === 'All') {
+    if (category === 'Todos') {
       return this.skills;
     }
     return this.skills.filter(skill => skill.category === category);
