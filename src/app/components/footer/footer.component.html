@@ -1,0 +1,38 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-header">
+      <h2 class="title">
+        <span class="bracket">[</span>
+        Let's Connect
+        <span class="bracket">]</span>
+      </h2>
+      <p class="subtitle">Ready to start a new project?</p>
+    </div>
+
+    <div class="contact-container">
+      <div class="email-box">
+        <span class="prompt">user@portfolio:~$</span>
+        <input type="text" [value]="email" readonly class="email-input" />
+        <a [href]="'mailto:' + email" class="action-btn" aria-label="Send Email">
+          <span class="icon">✉️</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="social-links">
+      <a href="https://github.com/HectorARG" target="_blank" class="social-link" aria-label="GitHub">
+        <i class="devicon-github-plain"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/hector-adrian-roman79509/" target="_blank" class="social-link" aria-label="LinkedIn">
+        <i class="devicon-linkedin-plain"></i>
+      </a>
+      <a href="#" target="_blank" class="social-link" aria-label="Twitter">
+        <i class="devicon-twitter-original"></i>
+      </a>
+    </div>
+
+    <div class="copyright">
+      <p>&copy; {{currentdate}} HectorDev. <span class="highlight">Built with Angular 21</span></p>
+    </div>
+  </div>
+</footer>

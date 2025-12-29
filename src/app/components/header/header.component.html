@@ -1,0 +1,30 @@
+<header class="header glassmorphism">
+  <div class="logo">
+    <span class="logo-bracket">&lt;</span>
+    <span class="logo-text">HectorDev</span>
+    <span class="logo-bracket">/&gt;</span>
+  </div>
+
+  <nav class="nav">
+    <ul class="nav-list">
+      @for (item of menuItems; track item.label) {
+        <li class="nav-item">
+          <a [href]="item.link" class="nav-link">
+            <span class="link-text">{{ item.label }}</span>
+            <span class="link-underline"></span>
+          </a>
+        </li>
+      }
+    </ul>
+  </nav>
+
+  <div class="actions">
+    <a href="https://github.com/HectorARG" target="_blank" class="social-link" aria-label="GitHub">
+      <i class="devicon-github-plain"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/hector-adrian-roman79509/" target="_blank" class="social-link" aria-label="LinkedIn">
+      <i class="devicon-linkedin-plain"></i>
+    </a>
+    <button class="cta-btn">Let's Talk</button>
+  </div>
+</header>

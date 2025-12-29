@@ -1,0 +1,162 @@
+<section class="projects-section" id="projects">
+  <div class="container">
+    <div class="header-content">
+      <h3 class="subtitle">Highlighted Projects</h3>
+      <h2 class="title">Project <span class="highlight">Portfolio</span></h2>
+    </div>
+
+    <div class="controls">
+      <div class="search-box">
+        <input
+          type="text"
+          placeholder="Search projects..."
+          [ngModel]="searchQuery()"
+          (ngModelChange)="searchQuery.set($event)"
+          class="search-input"
+        >
+      </div>
+
+      <div class="filters">
+        <button
+          class="filter-btn"
+          [class.active]="activeFilter() === 'Todos'"
+          (click)="setFilter('Todos')"
+        >Todos</button>
+        <button
+          class="filter-btn"
+          [class.active]="activeFilter() === 'Gobierno Digital'"
+          (click)="setFilter('Gobierno Digital')"
+        >Gobierno Digital</button>
+        <button
+          class="filter-btn"
+          [class.active]="activeFilter() === 'Freelancer'"
+          (click)="setFilter('Freelancer')"
+        >Freelancer</button>
+        <button
+          class="filter-btn"
+          [class.active]="activeFilter() === 'APIs'"
+          (click)="setFilter('APIs')"
+        >APIs</button>
+      </div>
+    </div>
+
+    <p class="count-text">Displaying {{ filteredProjects().length }} of {{ projects.length }} projects</p>
+
+    <div class="projects-grid">
+      @for (project of filteredProjects(); track project.projectName) {
+        <article class="project-card">
+          <div class="card-image">
+            <!-- Placeholder for image if not available, or use a gradient -->
+            <div class="image-placeholder">
+              <span class="project-initials">{{ project.projectName.substring(0, 2).toUpperCase() }}</span>
+            </div>
+          </div>
+
+          <div class="card-content">
+            <div class="title-row">
+              <h3 class="project-title">{{ project.projectName }}</h3>
+              @if (project.migration) {
+                <span class="migration-badge" [class]="project.migration.status.toLowerCase()">
+                  {{ project.migration.status }}
+                </span>
+              }
+            </div>
+
+            @if (project.migration) {
+              <div class="migration-info">
+                @if (project.migration.legacyVersion) {
+                  <div class="version legacy">
+                    {{ project.migration.legacyVersion }}
+                  </div>
+                }
+
+                <div class="arrow">➜</div>
+
+                <div class="version modern">
+                  {{ project.migration.currentVersion }}
+                </div>
+              </div>
+            }
+
+            <p class="project-desc">{{ project.projectDescription }}</p>
+
+            <div class="tech-stack">
+              @for (tech of project.tecnologias; track tech.nombre) {
+                <span class="tech-tag" [title]="tech.nombre">
+                  {{ tech.nombre }}
+                </span>
+              }
+            </div>
+
+            <div class="card-footer">
+              <span class="category-tag">{{ project.category }}</span>
+
+              <div class="actions">
+                <button class="details-btn" (click)="openModal(project)">Ver detalles</button>
+                @if (project.isProjectLinkPresent) {
+                  <a [href]="project.projectLiveLink" target="_blank" class="link-btn" aria-label="View Project">
+                    ↗
+                  </a>
+                }
+              </div>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+
+  @if (selectedProject()) {
+    <div class="modal-overlay" (click)="closeModal()">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <button class="close-btn" (click)="closeModal()">×</button>
+
+        <div class="modal-header">
+          <h2 class="modal-title">{{ selectedProject()?.projectName }}</h2>
+          <span class="category-badge">{{ selectedProject()?.category }}</span>
+        </div>
+
+        <div class="modal-body">
+          <p class="modal-description">{{ selectedProject()?.projectDescription }}</p>
+
+          @if (selectedProject()?.migration; as migration) {
+             <div class="migration-details-section">
+               <h3 class="section-title">Estado de Migración: <span [class]="migration.status.toLowerCase()">{{ migration.status }}</span></h3>
+
+               @if (migration.legacyVersion && migration.currentVersion) {
+                 <div class="comparison-table">
+                   <div class="table-header">
+                     <span class="col-legacy">Legacy Stack</span>
+                     <span class="col-arrow"></span>
+                     <span class="col-modern">Modern Stack</span>
+                   </div>
+                   @for (item of selectedProjectMigrationList(); track $index) {
+                     <div class="comparison-row">
+                       <span class="col-legacy">{{ item.legacy }}</span>
+                       <span class="col-arrow">➜</span>
+                       <span class="col-modern">{{ item.current }}</span>
+                     </div>
+                   }
+                 </div>
+               } @else {
+                  <p class="simple-migration">{{ migration.legacyVersion }} ➜ {{ migration.currentVersion }}</p>
+               }
+             </div>
+          }
+
+           <div class="tech-stack-section">
+             <h3 class="section-title">Tecnologías</h3>
+             <div class="tech-grid">
+               @for (tech of selectedProject()?.tecnologias; track tech.nombre) {
+                 <div class="tech-item">
+                   <i [class]="tech.logo"></i>
+                   <span>{{ tech.nombre }}</span>
+                 </div>
+               }
+             </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  }
+</section>

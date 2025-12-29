@@ -1,0 +1,55 @@
+<section class="hero" id="home">
+  <div class="hero-background"></div>
+
+  <div class="hero-content">
+    <h1 class="hero-title">
+      Software Engineer & <br />
+      <span class="highlight-animated">Senior Full Stack Developer</span>
+    </h1>
+    <p class="hero-description">
+      I lead digital transformation for organizations by architecting robust, scalable, and high-performance web solutions using cutting-edge technologies such as Angular, Spring Boot, Oracle, and PostgreSQL.
+Proven track record of delivering high-impact, enterprise-grade systems for over 4 years.
+    </p>
+
+    <div class="cta-group">
+      <button class="cta-button primary">
+        Ver Proyectos <span class="glow"></span>
+      </button>
+      <button class="cta-button secondary">
+        Descargar CV
+      </button>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="code-card-container" appTilt>
+      <div class="code-card glassmorphism">
+        <div class="card-header">
+          <div class="window-controls">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="tabs">
+            <button
+              class="tab"
+              [class.active]="activeTab() === 'frontend'"
+              (click)="setActiveTab('frontend')">
+              Frontend.ts
+            </button>
+            <button
+              class="tab"
+              [class.active]="activeTab() === 'backend'"
+              (click)="setActiveTab('backend')">
+              Backend.java
+            </button>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <pre><code [class.java]="activeTab() === 'backend'" [class.typescript]="activeTab() === 'frontend'">{{ displayedCode() }}<span class="cursor">|</span></code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
