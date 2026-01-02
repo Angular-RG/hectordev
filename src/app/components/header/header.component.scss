@@ -148,6 +148,8 @@ $glass-border: rgba(255, 255, 255, 0.08);
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 0 10px rgba($neon-purple, 0.1);
+  text-decoration: none;
+  display: inline-block;
 
   &:hover {
     background: rgba($neon-purple, 0.1);
