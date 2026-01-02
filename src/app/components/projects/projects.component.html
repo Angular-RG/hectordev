@@ -44,11 +44,11 @@
 
     <div class="projects-grid">
       @for (project of filteredProjects(); track project.projectName) {
+
         <article class="project-card">
           <div class="card-image">
-            <!-- Placeholder for image if not available, or use a gradient -->
             <div class="image-placeholder">
-              <span class="project-initials">{{ project.projectName.substring(0, 2).toUpperCase() }}</span>
+              <span class="project-initials">{{ project.projectAcronym!.toUpperCase() }}</span>
             </div>
           </div>
 
@@ -121,7 +121,8 @@
 
           @if (selectedProject()?.migration; as migration) {
              <div class="migration-details-section">
-               <h3 class="section-title">Estado de Migración: <span [class]="migration.status.toLowerCase()">{{ migration.status }}</span></h3>
+               <h3 class="section-title">Estado del proyecto: <span [class]="selectedProject()?.projectStatus?.status">{{ selectedProject()?.projectStatus?.showStatus?.toLocaleUpperCase() }}</span></h3>
+               <h2 class="section-title-arch">Arquitectura del proyecto: <span [class]="selectedProject()?.arquitectura?.toLowerCase()">{{ selectedProject()?.arquitectura?.toLocaleUpperCase() }}</span></h2>
 
                @if (migration.legacyVersion && migration.currentVersion) {
                  <div class="comparison-table">
@@ -149,7 +150,7 @@
              <div class="tech-grid">
                @for (tech of selectedProject()?.tecnologias; track tech.nombre) {
                  <div class="tech-item">
-                   <i [class]="tech.logo"></i>
+                   <div class="tech-icon" [style.mask-image]="'url(' + tech.logo + ')'" [style.-webkit-mask-image]="'url(' + tech.logo + ')'"></div>
                    <span>{{ tech.nombre }}</span>
                  </div>
                }

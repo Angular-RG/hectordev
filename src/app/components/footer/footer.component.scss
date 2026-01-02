@@ -149,6 +149,18 @@ $glass-border: rgba(255, 255, 255, 0.08);
     transform: translateY(-5px) rotate(360deg);
     box-shadow: 0 0 20px rgba($neon-cyan, 0.3);
   }
+
+  .social-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: currentColor;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+  }
 }
 
 .copyright {

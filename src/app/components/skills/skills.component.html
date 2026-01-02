@@ -29,7 +29,7 @@
 
           <div class="skill-header">
             <div class="skill-icon-wrapper">
-              <i [class]="skill.icon" class="skill-icon"></i>
+              <div class="skill-icon" [style.mask-image]="'url(' + skill.icon + ')'" [style.-webkit-mask-image]="'url(' + skill.icon + ')'"></div>
             </div>
             <div class="skill-info">
               <h3 class="skill-name">{{ skill.name }}</h3>

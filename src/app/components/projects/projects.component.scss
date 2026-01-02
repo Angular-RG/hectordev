@@ -196,7 +196,7 @@ $text-gray: #94a3b8;
     border: 1px solid rgba(239, 68, 68, 0.3);
   }
 
-  &.modernizado {
+  &.actual {
     background: rgba(16, 185, 129, 0.15);
     color: #10b981;
     border: 1px solid rgba(16, 185, 129, 0.3);
@@ -412,9 +412,28 @@ $text-gray: #94a3b8;
     padding: 0.2rem 0.6rem;
     border-radius: 8px;
 
-    &.migrando { color: #ffc107; background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); }
+    &.en-progreso { color: #ffc107; background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); }
     &.legado { color: #ef4444; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); }
-    &.modernizado { color: #10b981; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); }
+    &.finalizado { color: #10b981; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); }
+  }
+}
+
+.section-title-arch {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-family: 'Fira Code', monospace;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  span {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 8px;
+
+    &.monolito { color: #ef4444; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); }
+    &.microservicios { color: #10b981; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); }
   }
 }
 
@@ -489,9 +508,16 @@ $text-gray: #94a3b8;
       transform: translateY(-2px);
     }
 
-    i {
-      font-size: 2rem;
-      color: #fff;
+    .tech-icon {
+      width: 2rem;
+      height: 2rem;
+      background-color: #fff;
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      -webkit-mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-position: center;
     }
 
     span {

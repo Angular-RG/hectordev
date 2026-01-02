@@ -225,13 +225,20 @@ $glass-border: rgba(255, 255, 255, 0.08);
 }
 
 .skill-icon {
-  font-size: 1.8rem;
-  color: #fff;
-  transition: color 0.3s ease;
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: #fff;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  transition: background-color 0.3s ease;
 }
 
 .skill-card:hover .skill-icon {
-  color: $neon-cyan;
+  background-color: $neon-cyan;
 }
 
 .skill-info {

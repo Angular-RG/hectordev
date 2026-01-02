@@ -10,20 +10,31 @@ export interface Technology {
 
 export interface Project {
   projectImg: string;
+  projectStatus: ProjectStatusClass;
   projectName: string;
   projectDescription: string;
   isProjectLinkPresent: boolean;
   projectLiveLink: string;
   isProjectGithubLinkPresent: boolean;
-  projectGithubLink?: string;
+  tecnologias: Technology[];
+  arquitectura: Arquitectura;
   isOpenSource: boolean;
   freelance: boolean;
-  arquitectura: Arquitectura;
-  tecnologias: Technology[];
+  projectGithubLink?: string;
+  projectAcronym?: string;
   category?: string; // Added for filtering
-  migration?: {
-    status: 'Legado' | 'Migrando' | 'Modernizado';
-    legacyVersion?: string;
-    currentVersion?: string;
-  };
+  migration?: ProjectMigrationStatus;
 }
+
+interface ProjectMigrationStatus{
+  status: 'Legado' | 'Migrando' | 'Modernizado' | 'Actual';
+  legacyVersion?: string;
+  currentVersion?: string;
+}
+
+interface ProjectStatusClass {
+  status: string;
+  showStatus: String;
+}
+
+
