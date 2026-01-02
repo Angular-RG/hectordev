@@ -44,11 +44,11 @@
 
     <div class="projects-grid">
       @for (project of filteredProjects(); track project.projectName) {
+
         <article class="project-card">
           <div class="card-image">
-            <!-- Placeholder for image if not available, or use a gradient -->
             <div class="image-placeholder">
-              <span class="project-initials">{{ project.projectName.substring(0, 2).toUpperCase() }}</span>
+              <span class="project-initials">{{ project.projectAcronym!.toUpperCase() }}</span>
             </div>
           </div>
 
@@ -121,7 +121,7 @@
 
           @if (selectedProject()?.migration; as migration) {
              <div class="migration-details-section">
-               <h3 class="section-title">Estado de Migración: <span [class]="migration.status.toLowerCase()">{{ migration.status }}</span></h3>
+               <h3 class="section-title">Estado del proyecto: <span [class]="selectedProject()?.projectStatus?.status">{{ selectedProject()?.projectStatus?.showStatus?.toLocaleUpperCase() }}</span></h3>
 
                @if (migration.legacyVersion && migration.currentVersion) {
                  <div class="comparison-table">
