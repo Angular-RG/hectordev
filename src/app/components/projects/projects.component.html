@@ -149,7 +149,7 @@
              <div class="tech-grid">
                @for (tech of selectedProject()?.tecnologias; track tech.nombre) {
                  <div class="tech-item">
-                   <i [class]="tech.logo"></i>
+                   <img [src]="tech.logo" [alt]="tech.nombre" width="24" height="24">
                    <span>{{ tech.nombre }}</span>
                  </div>
                }

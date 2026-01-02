@@ -1,12 +1,12 @@
 import { Component, ChangeDetectionStrategy, signal, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Project, Arquitectura } from '../../models/project.interface';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, NgOptimizedImage],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -55,13 +55,13 @@ export class ProjectsComponent {
         currentVersion: 'Java 21 / Spring Boot 3.5.x / Angular 21 / PostgreSQL 16 / Kubernetes'
       },
       tecnologias: [
-        { nombre: 'Java', logo: 'devicon-java-plain' },
-        { nombre: 'TypeScript', logo: 'devicon-typescript-plain' },
-        { nombre: 'Angular', logo: 'devicon-angular-plain' },
-        { nombre: 'Spring Boot', logo: 'devicon-spring-plain' },
-        { nombre: 'Hibernate', logo: 'devicon-hibernate-plain' },
-        { nombre: 'Oracle', logo: 'devicon-oracle-original' },
-        { nombre: 'AWS', logo: 'devicon-amazonwebservices-plain-wordmark' }
+        { nombre: 'Java', logo: 'assets/icons/java-plain.svg' },
+        { nombre: 'TypeScript', logo: 'assets/icons/typescript-plain.svg' },
+        { nombre: 'Angular', logo: 'assets/icons/angular-plain.svg' },
+        { nombre: 'Spring Boot', logo: 'assets/icons/spring-original.svg' },
+        { nombre: 'Hibernate', logo: 'assets/icons/hibernate-plain.svg' },
+        { nombre: 'Oracle', logo: 'assets/icons/oracle-original.svg' },
+        { nombre: 'AWS', logo: 'assets/icons/amazonwebservices-plain-wordmark.svg' }
       ]
     },
     {
@@ -81,12 +81,12 @@ export class ProjectsComponent {
         currentVersion: 'Java 11 / Spring Boot 2.x / Angular 12 / Oracle 11g'
       },
       tecnologias: [
-        { nombre: 'Java', logo: 'devicon-java-plain' },
-        { nombre: 'TypeScript', logo: 'devicon-typescript-plain' },
-        { nombre: 'Angular', logo: 'devicon-angular-plain' },
-        { nombre: 'Spring Boot', logo: 'devicon-spring-plain' },
-        { nombre: 'Hibernate', logo: 'devicon-hibernate-plain' },
-        { nombre: 'Oracle', logo: 'devicon-oracle-original' }
+        { nombre: 'Java', logo: 'assets/icons/java-plain.svg' },
+        { nombre: 'TypeScript', logo: 'assets/icons/typescript-plain.svg' },
+        { nombre: 'Angular', logo: 'assets/icons/angular-plain.svg' },
+        { nombre: 'Spring Boot', logo: 'assets/icons/spring-original.svg' },
+        { nombre: 'Hibernate', logo: 'assets/icons/hibernate-plain.svg' },
+        { nombre: 'Oracle', logo: 'assets/icons/oracle-original.svg' }
       ]
     },
     {
@@ -106,12 +106,12 @@ export class ProjectsComponent {
         currentVersion: 'Java 11 / Spring Boot 2.x / Angular 12 / Oracle 11g'
       },
       tecnologias: [
-        { nombre: 'Java', logo: 'devicon-java-plain' },
-        { nombre: 'TypeScript', logo: 'devicon-typescript-plain' },
-        { nombre: 'Angular', logo: 'devicon-angular-plain' },
-        { nombre: 'Spring Boot', logo: 'devicon-spring-plain' },
-        { nombre: 'Hibernate', logo: 'devicon-hibernate-plain' },
-        { nombre: 'Oracle', logo: 'devicon-oracle-original' }
+        { nombre: 'Java', logo: 'assets/icons/java-plain.svg' },
+        { nombre: 'TypeScript', logo: 'assets/icons/typescript-plain.svg' },
+        { nombre: 'Angular', logo: 'assets/icons/angular-plain.svg' },
+        { nombre: 'Spring Boot', logo: 'assets/icons/spring-original.svg' },
+        { nombre: 'Hibernate', logo: 'assets/icons/hibernate-plain.svg' },
+        { nombre: 'Oracle', logo: 'assets/icons/oracle-original.svg' }
       ]
     },
     {
@@ -132,10 +132,10 @@ export class ProjectsComponent {
         currentVersion: 'Java 21 / Spring Boot 3.5.x / Spring Security / OAuth2.0 / PostgreSQL 16 / Kubernetes'
       },
       tecnologias: [
-        { nombre: 'Java', logo: 'devicon-java-plain' },
-        { nombre: 'Spring Boot', logo: 'devicon-spring-plain' },
-        { nombre: 'Hibernate', logo: 'devicon-hibernate-plain' },
-        { nombre: 'Oracle', logo: 'devicon-oracle-original' }
+        { nombre: 'Java', logo: 'assets/icons/java-plain.svg' },
+        { nombre: 'Spring Boot', logo: 'assets/icons/spring-original.svg' },
+        { nombre: 'Hibernate', logo: 'assets/icons/hibernate-plain.svg' },
+        { nombre: 'Oracle', logo: 'assets/icons/oracle-original.svg' }
       ]
     },
     {
@@ -151,12 +151,12 @@ export class ProjectsComponent {
       arquitectura: Arquitectura.MONO,
       category: 'Freelancer',
       tecnologias: [
-        { nombre: 'Java', logo: 'devicon-java-plain' },
-        { nombre: 'Spring Boot', logo: 'devicon-spring-plain' },
-        { nombre: 'Hibernate', logo: 'devicon-hibernate-plain' },
-        { nombre: 'PostgreSQL', logo: 'devicon-postgresql-plain' },
-        { nombre: 'Angular', logo: 'devicon-angular-plain' },
-        { nombre: 'TypeScript', logo: 'devicon-typescript-plain' }
+        { nombre: 'Java', logo: 'assets/icons/java-plain.svg' },
+        { nombre: 'Spring Boot', logo: 'assets/icons/spring-original.svg' },
+        { nombre: 'Hibernate', logo: 'assets/icons/hibernate-plain.svg' },
+        { nombre: 'PostgreSQL', logo: 'assets/icons/postgresql-plain.svg' },
+        { nombre: 'Angular', logo: 'assets/icons/angular-plain.svg' },
+        { nombre: 'TypeScript', logo: 'assets/icons/typescript-plain.svg' }
       ]
     },
     {
@@ -172,12 +172,12 @@ export class ProjectsComponent {
       arquitectura: Arquitectura.MONO,
       category: 'Freelancer',
       tecnologias: [
-        { nombre: 'Java', logo: 'devicon-java-plain' },
-        { nombre: 'Spring Boot', logo: 'devicon-spring-plain' },
-        { nombre: 'Hibernate', logo: 'devicon-hibernate-plain' },
-        { nombre: 'PostgreSQL', logo: 'devicon-postgresql-plain' },
-        { nombre: 'Angular', logo: 'devicon-angular-plain' },
-        { nombre: 'TypeScript', logo: 'devicon-typescript-plain' }
+        { nombre: 'Java', logo: 'assets/icons/java-plain.svg' },
+        { nombre: 'Spring Boot', logo: 'assets/icons/spring-original.svg' },
+        { nombre: 'Hibernate', logo: 'assets/icons/hibernate-plain.svg' },
+        { nombre: 'PostgreSQL', logo: 'assets/icons/postgresql-plain.svg' },
+        { nombre: 'Angular', logo: 'assets/icons/angular-plain.svg' },
+        { nombre: 'TypeScript', logo: 'assets/icons/typescript-plain.svg' }
       ]
     },
     {
@@ -193,12 +193,12 @@ export class ProjectsComponent {
       arquitectura: Arquitectura.MONO,
       category: 'Freelancer',
       tecnologias: [
-        { nombre: 'Java', logo: 'devicon-java-plain' },
-        { nombre: 'Spring Boot', logo: 'devicon-spring-plain' },
-        { nombre: 'Hibernate', logo: 'devicon-hibernate-plain' },
-        { nombre: 'PostgreSQL', logo: 'devicon-postgresql-plain' },
-        { nombre: 'Angular', logo: 'devicon-angular-plain' },
-        { nombre: 'TypeScript', logo: 'devicon-typescript-plain' }
+        { nombre: 'Java', logo: 'assets/icons/java-plain.svg' },
+        { nombre: 'Spring Boot', logo: 'assets/icons/spring-original.svg' },
+        { nombre: 'Hibernate', logo: 'assets/icons/hibernate-plain.svg' },
+        { nombre: 'PostgreSQL', logo: 'assets/icons/postgresql-plain.svg' },
+        { nombre: 'Angular', logo: 'assets/icons/angular-plain.svg' },
+        { nombre: 'TypeScript', logo: 'assets/icons/typescript-plain.svg' }
       ]
     }
   ];
