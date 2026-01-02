@@ -489,9 +489,16 @@ $text-gray: #94a3b8;
       transform: translateY(-2px);
     }
 
-    i {
-      font-size: 2rem;
-      color: #fff;
+    .tech-icon {
+      width: 2rem;
+      height: 2rem;
+      background-color: #fff;
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      -webkit-mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-position: center;
     }
 
     span {
