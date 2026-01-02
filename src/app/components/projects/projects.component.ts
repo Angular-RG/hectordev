@@ -40,7 +40,7 @@ export class ProjectsComponent {
     {
       projectImg: 'assets/images/sei.png',
       projectAcronym: 'SEI',
-      projectStatus: { status: 'en-progreso', showStatus: 'En Progreso' },
+      projectStatus: { status: 'en-progreso', showStatus: 'Migracion en Progreso' },
       projectName: 'Sistema Estatal de Ingresos',
       projectDescription: 'Sistema integral para el manejo de datos vehiculares del estado de Durango. Incluye trámites de altas, bajas, cambios, replaqueos, concesiones vehiculares. Sistema de cobros, reportes y validaciones con arquitectura de microservicios.',
       isProjectLinkPresent: false,
@@ -123,7 +123,7 @@ export class ProjectsComponent {
     {
       projectImg: 'assets/images/api.png',
       projectAcronym: 'API DD',
-      projectStatus: { status: 'finalizado', showStatus: 'Finalizado' },
+      projectStatus: { status: 'finalizado', showStatus: 'Migracion Finalizada' },
       projectName: 'API Durango Digital',
       projectDescription: 'API REST robusta para servicios gubernamentales digitales. Gestión de trámites vehiculares, registro civil, impuesto predial y declaraciones fiscales. Integración con múltiples sistemas.',
       isProjectLinkPresent: true,
@@ -149,7 +149,7 @@ export class ProjectsComponent {
     {
       projectImg: 'assets/images/rub.png',
       projectAcronym: 'RUB',
-      projectStatus: { status: 'finalizado', showStatus: 'Finalizado' },
+      projectStatus: { status: 'finalizado', showStatus: 'Migracion Finalizada' },
       projectName: 'Registro Único de Beneficiarios',
       projectDescription: 'Sistema municipal para gestión de beneficiarios. Creación, supervisión y gestión de solicitudes ciudadanas. Interfaz intuitiva y procesos automatizados para mayor eficiencia.',
       isProjectLinkPresent: true,

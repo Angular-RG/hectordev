@@ -122,6 +122,7 @@
           @if (selectedProject()?.migration; as migration) {
              <div class="migration-details-section">
                <h3 class="section-title">Estado del proyecto: <span [class]="selectedProject()?.projectStatus?.status">{{ selectedProject()?.projectStatus?.showStatus?.toLocaleUpperCase() }}</span></h3>
+               <h2 class="section-title-arch">Arquitectura del proyecto: <span [class]="selectedProject()?.arquitectura?.toLowerCase()">{{ selectedProject()?.arquitectura?.toLocaleUpperCase() }}</span></h2>
 
                @if (migration.legacyVersion && migration.currentVersion) {
                  <div class="comparison-table">
